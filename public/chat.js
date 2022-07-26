@@ -2,7 +2,7 @@ const socket = io();
 
 const form = document.getElementById("form");
 const input = document.getElementById("inputMessage");
-const messages = document.getElementById("messages");
+const messages = document.querySelector(".messages");
 
 form.addEventListener("submit", e => {
     e.preventDefault();
