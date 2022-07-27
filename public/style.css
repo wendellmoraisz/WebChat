@@ -47,9 +47,9 @@ main {
 
 .messages > p {
     position: relative;
-    width: 50%;
-    height: 90px;
-    padding: 16px;
+    width: 70%;
+    min-height: 90px;
+    padding: 8px 16px;
     border-radius: 5px;
     background-color: #edf3f9;
     color: #1A202C;
@@ -62,6 +62,12 @@ main {
     border-right: 20px solid #edf3f9;
     position: absolute;
     left: -36px;
+}
+
+.username {
+    display: block;
+    color: #718096;
+    margin-bottom: 5px;
 }
 
 /* campo de escrita da mensagem */
@@ -78,7 +84,7 @@ main {
     padding: 16px;
     border: none;
     outline: none;
-    font-size: 1.2rem;
+    font-size: 1rem;
     border-radius: 8px;
 }
 
