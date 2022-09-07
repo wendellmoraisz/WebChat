@@ -28,6 +28,7 @@ main {
 }
 
 .messages {
+    position: relative;
     height: 100%;
     background-color: #fff;
     padding: 40px;
@@ -70,6 +71,13 @@ main {
     margin-bottom: 5px;
 }
 
+.is-typing{
+    color: #0096FF;
+    font-weight: lighter;
+    position: absolute;
+    top: 90%;
+}
+
 /* campo de escrita da mensagem */
 
 #form {
@@ -101,4 +109,16 @@ main {
 
 .send-msg-btn:hover {
     background-color: #2155CD;
+}
+
+/* Responsivo */
+
+@media (max-width: 700px) {
+    .chat-container {
+        width: 80vw;
+    }
+
+    .is-typing {
+        top: 85%;
+    }
 }

@@ -12,6 +12,24 @@ form.addEventListener("submit", e => {
         socket.emit("chat message", { username: username, content: input.value });
         input.value = "";
     }
+    socket.emit("user_typing", false);
+});
+
+input.addEventListener("keyup", e => {
+    const hasMessage = e.target.value !== "";
+    socket.emit("user_typing", hasMessage, username, socket.id);
+});
+
+const isTypingSpan = document.createElement("span");
+isTypingSpan.classList.add("is-typing");
+isTypingSpan.style.display = "none";
+messages.appendChild(isTypingSpan);
+
+socket.on("user_typing", ({ isTyping, userName, userId }) => {
+    if (userId !== socket.id) {
+        isTypingSpan.innerHTML = `${userName} está digitando...`;
+        isTypingSpan.style.display = isTyping ? "block" : "none";
+    }
 });
 
 socket.on("chat message", msg => {
