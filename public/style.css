@@ -73,9 +73,6 @@ main {
 
 .is-typing{
     color: #0096FF;
-    font-weight: lighter;
-    position: absolute;
-    top: 90%;
 }
 
 /* campo de escrita da mensagem */

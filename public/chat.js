@@ -23,11 +23,11 @@ input.addEventListener("keyup", e => {
 const isTypingSpan = document.createElement("span");
 isTypingSpan.classList.add("is-typing");
 isTypingSpan.style.display = "none";
-messages.appendChild(isTypingSpan);
 
 socket.on("user_typing", ({ isTyping, userName, userId }) => {
     if (userId !== socket.id) {
         isTypingSpan.innerHTML = `${userName} está digitando...`;
+        messages.appendChild(isTypingSpan);
         isTypingSpan.style.display = isTyping ? "block" : "none";
     }
 });
